@@ -35,7 +35,7 @@ namespace cw3___v2.Controllers
             return NotFound("Nie znaleziono studenta");
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult CreateStudent(Student student)
         {
             student.IndexNumber = $"s{new Random().Next(1, 20000)}";
