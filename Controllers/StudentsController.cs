@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using cw3___v2.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace cw3___v2.Controllers
 {
@@ -31,6 +33,13 @@ namespace cw3___v2.Controllers
             }
 
             return NotFound("Nie znaleziono studenta");
+        }
+
+        [HttpGet]
+        public IActionResult CreateStudent(Student student)
+        {
+            student.IndexNumber = $"s{new Random().Next(1, 20000)}";
+            return Ok(student);
         }
     }
 }
