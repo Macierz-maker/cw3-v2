@@ -6,11 +6,11 @@ namespace cw3___v2.Controllers
     [Route("api/students")]
     public class StudentsController : ControllerBase
     {
-        [HttpGet]
-        public string GetStudent()
-        {
-            return "Kowalski, Malewski, Andrzejewski";
-        }
+        // [HttpGet]
+        // public string GetStudent()
+        // {
+        //     return "Kowalski, Malewski, Andrzejewski";
+        // }
         
         [HttpGet]
         public string GetStudent(string orderBy)
