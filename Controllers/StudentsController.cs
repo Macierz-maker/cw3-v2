@@ -28,26 +28,26 @@ namespace cw3___v2.Controllers
             return Ok(_dbService.GetStudents());
         }
         
-        [HttpGet]
-        public string GetStudent(string orderBy)
-        {
-            return $"Kowalski, Malewski, Andrzejewski sortowanie={orderBy}";
-        }
+        // [HttpGet]
+        // public string GetStudent(string orderBy)
+        // {
+        //     return $"Kowalski, Malewski, Andrzejewski sortowanie={orderBy}";
+        // }
 
-        [HttpGet("{id}")]
-        public IActionResult GetStudent(int id)
-        {
-            if (id == 1)
-            {
-                return Ok("Kowalski");
-            }
-            else if (id == 2)
-            {
-                return Ok("Malewski");
-            }
-
-            return NotFound("Nie znaleziono studenta");
-        }
+        // [HttpGet("{id}")]
+        // public IActionResult GetStudent(int id)
+        // {
+        //     if (id == 1)
+        //     {
+        //         return Ok("Kowalski");
+        //     }
+        //     else if (id == 2)
+        //     {
+        //         return Ok("Malewski");
+        //     }
+        //
+        //     return NotFound("Nie znaleziono studenta");
+        // }
 
         [HttpPost]
         public IActionResult CreateStudent(Student student)
