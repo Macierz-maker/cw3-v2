@@ -1,4 +1,5 @@
 ﻿using System;
+using cw3___v2.DAL;
 using cw3___v2.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,19 @@ namespace cw3___v2.Controllers
         // {
         //     return "Kowalski, Malewski, Andrzejewski";
         // }
+
+        private readonly IDbService _dbService;
+
+        public StudentsController(IDbService dbService)
+        {
+            _dbService = dbService;
+        }
+
+        [HttpGet]
+        public IActionResult GetStudents(string orderBy)
+        {
+            return Ok(_dbService.GetStudents());
+        }
         
         [HttpGet]
         public string GetStudent(string orderBy)
